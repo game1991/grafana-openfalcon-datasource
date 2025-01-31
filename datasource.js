@@ -163,7 +163,7 @@ System.register(['lodash', 'app/core/utils/datemath'], function(exports_1) {
             if (interpolated == '*') {
               interpolated = '';
             }
-            return this.doOpenfalconRequest({ method: 'GET', url: '/metrics/find?query=' + interpolated })
+            return this.doOpenfalconRequest({ method: 'GET', url: '?query=' + interpolated })
                 .then(function (results) {
                 return lodash_1.default.map(results.data, function (metric) {
                     return {
@@ -234,7 +234,7 @@ System.register(['lodash', 'app/core/utils/datemath'], function(exports_1) {
                     continue;
                 }
                 targetValue = targets[target.refId];
-                // this will brken upcase metric during query, so I just mark it to solve this kind of porblem. 
+                // this will brken upcase metric during query, so I just mark it to solve this kind of porblem.
                 // targetValue = targetValue.replace(regex, nestedSeriesRegexReplacer);
                 targets[target.refId] = targetValue;
                 if (!target.hide) {
